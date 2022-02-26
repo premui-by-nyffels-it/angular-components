@@ -1,0 +1,11 @@
+<div class="tabs-container">
+  <div class="tabs-header" [style.grid-template-columns]="templateColumns">
+    <div class="tabs-header-item" [id]="item._selected ? 'selected' : ''" *ngFor="let item of tabItems" (click)="onTabClick(item.id)">
+      <p class="tab-header-label">{{ item.label }}</p>
+    </div>
+  </div>
+
+  <div class="tabs-content" [style.min-height]="height" [style.padding]="padding">
+    <ng-content select="premui-tab-item"></ng-content>
+  </div>
+</div>

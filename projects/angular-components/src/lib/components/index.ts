@@ -5,3 +5,4 @@ export * from './loading/loading.component';
 export * from './spacer/spacer.component';
 export * from './button/button.component';
 export * from './collapsible/collapsible.component';
+export * from './tabs/tabs.component';
