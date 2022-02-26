@@ -7,4 +7,5 @@ All the changes for the Premui Angular Components module.
 - Style service.
 - Card component. 
 - Icon component. 
-- Toggle Button Component.
+- Toggle Button component.
+- Loading component.

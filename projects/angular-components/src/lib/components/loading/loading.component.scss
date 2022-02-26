@@ -1,0 +1,17 @@
+@import '../../../../styleVariables.scss';
+
+div.loading-container {
+  height: 100%;
+  width: 100%;
+}
+
+svg {
+  padding: 0;
+  margin-left: calc(50% - 100px);
+  margin-right: auto;
+  margin-top: calc(100vh - 90vh);
+
+  height: 200px;
+
+  fill: var(--fontColor);
+}
