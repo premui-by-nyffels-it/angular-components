@@ -5,7 +5,6 @@ import { PremuiStyleService } from '../../services';
   selector: 'premui-loading',
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PremuiLoading {
   constructor(private ref: ElementRef, private styleService: PremuiStyleService) {

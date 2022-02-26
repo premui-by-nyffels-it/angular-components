@@ -1,0 +1,33 @@
+@import '../../../../styleVariables.scss';
+
+button:hover {
+  background: var(--accentColor) radial-gradient(circle, transparent 1%, var(--accentColor) 1%) center/15000%;
+}
+
+button:active {
+  background-color: rgba(var(--altColor), 0.5);
+  background-size: 100%;
+  transition: background 0s;
+}
+
+button {
+  width: 100%;
+  color: var(--fontColor);
+  font-family: var(--);
+
+  border: none;
+  border-radius: 5px;
+  padding: 12px 18px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: var(--accentColor);
+  outline: none;
+
+  background-position: center;
+  transition: background 0.8s;
+}
+
+button:disabled {
+  background-color: var(--disabledColor);
+}

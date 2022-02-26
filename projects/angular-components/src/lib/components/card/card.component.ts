@@ -5,7 +5,6 @@ import { PremuiStyleService } from '../../services';
   selector: 'premui-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PremuiCard {
   private _padding: string = '20px 0';
