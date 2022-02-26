@@ -1,0 +1,35 @@
+@import '../../../../styleVariables.scss';
+
+.collapsible {
+  background-color: transparent;
+  color: var(--fontColor);
+  cursor: pointer;
+  width: calc(100% - 10px);
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 14px;
+
+  margin: 0;
+  padding: 15px;
+}
+
+.collapsible:hover {
+  background-color: var(--accentColor);
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: transparent;
+  color: var(--fontColor);
+}
+
+svg.title {
+  float: right;
+  padding-top: 2px;
+  fill: var(--fontColor);
+  height: 12px;
+}
