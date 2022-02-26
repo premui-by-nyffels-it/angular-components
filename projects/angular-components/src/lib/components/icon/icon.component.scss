@@ -1,0 +1,9 @@
+@import "../../../../styleVariables.scss";
+
+svg {
+  fill: var(--fontColor);
+}
+
+svg.disabled {
+  fill: var(--disabledFontColor) !important;
+}
