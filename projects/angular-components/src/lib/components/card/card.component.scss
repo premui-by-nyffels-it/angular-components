@@ -1,0 +1,7 @@
+@import '../../../../styleVariables.scss';
+
+div.card-container {
+  background-color: var(--primColor);
+  min-height: 1px;
+  border-radius: 5px;
+}
