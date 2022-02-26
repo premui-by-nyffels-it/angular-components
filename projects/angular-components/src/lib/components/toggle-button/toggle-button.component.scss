@@ -59,11 +59,11 @@ $sw-lg-min-width: 60px;
         .switch-label {
           &-checked {
             padding-right: nth($i, 2) + 5px;
-            padding-left: (nth($i, 2) / 3) * 1.5;
+            padding-left: calc(nth($i, 2) / 3) * 1.5;
           }
           &-unchecked {
             padding-left: nth($i, 2) + 5px;
-            padding-right: (nth($i, 2) / 3) * 1.5;
+            padding-right: calc(nth($i, 2) / 3) * 1.5;
           }
         }
       }
