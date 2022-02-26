@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PremuiToggle } from './toggle.component';
+import { PremuiToggleButton } from './toggle-button.component';
 
-describe('PremuiToggle', () => {
-  let component: PremuiToggle;
-  let fixture: ComponentFixture<PremuiToggle>;
+describe('PremuiToggleButton', () => {
+  let component: PremuiToggleButton;
+  let fixture: ComponentFixture<PremuiToggleButton>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PremuiToggle ]
+      declarations: [ PremuiToggleButton ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PremuiToggle);
+    fixture = TestBed.createComponent(PremuiToggleButton);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
