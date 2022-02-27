@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PremuiInput } from './input.component';
+import { PremuiTextArea } from './text-area.component';
 
-describe('PremuiInput', () => {
-  let component: PremuiInput;
-  let fixture: ComponentFixture<PremuiInput>;
+describe('PremuiTextArea', () => {
+  let component: PremuiTextArea;
+  let fixture: ComponentFixture<PremuiTextArea>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PremuiInput ]
+      declarations: [ PremuiTextArea ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PremuiInput);
+    fixture = TestBed.createComponent(PremuiTextArea);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
