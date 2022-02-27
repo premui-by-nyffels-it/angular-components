@@ -1,0 +1,13 @@
+<button
+  class="btn-cta"
+  [class.toggled]="value"
+  [class.untoggled]="!value"
+  [class.fixed-open]="fixedOpen"
+  [class.expandable]="!fixedOpen"
+  [style.width]="expandedWidth"
+  (click)="clicked()"
+  [disabled]="disabled"
+>
+  <premui-icon [icon]="icon" class="btn-icon"></premui-icon>
+  <span class="button-text"><ng-content></ng-content></span>
+</button>

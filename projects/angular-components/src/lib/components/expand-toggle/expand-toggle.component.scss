@@ -1,0 +1,64 @@
+@import '../../../../styleVariables.scss';
+
+.btn-cta {
+  display: inline-block;
+  height: 40px;
+  border-radius: 5px;
+  border: var(--primColor);
+  background-color: var(--primColor);
+  color: var(--fontColor);
+  transition: width 0.7s;
+  outline: none;
+  margin: 0 5px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+div.expandable.btn-cta:not(:hover) {
+  width: 40px !important;
+}
+
+.btn-cta:hover {
+  transition: width 0.7s;
+  cursor: pointer;
+}
+
+.btn-cta.toggled {
+  background-color: var(--validColor);
+}
+.btn-cta.untoggled {
+  background-color: var(--invalidColor);
+}
+
+.btn-cta:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.btn-cta:disabled:hover {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-cta .button-text {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  text-align: center;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 10px;
+}
+
+.btn-cta:hover .button-text {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.btn-cta:hover .btn-icon {
+  display: inline-block;
+}
