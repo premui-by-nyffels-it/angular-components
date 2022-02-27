@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef } from '@angular/core';
-import { PremuiStyleService } from 'dist/angular-components/public-api';
+import { PremuiStyleService } from '../../services';
 import { Icon } from '../icon/icon.component';
 
 @Component({

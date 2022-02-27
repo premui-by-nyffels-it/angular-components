@@ -1,7 +1,7 @@
-import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, OnChanges, SimpleChanges, Input, ElementRef, ChangeDetectorRef, ViewChild, Injectable } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges, Input, ElementRef, ViewChild, Injectable } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { PremuiStyleService } from 'dist/angular-components/public-api';
 import { Observable, Subject } from 'rxjs';
+import { PremuiStyleService } from '../../services';
 
 @Injectable({
   providedIn: 'root',

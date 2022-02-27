@@ -2,8 +2,8 @@ import { Component, ElementRef, Injectable, Input, OnDestroy, OnInit, ViewChild 
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import _ from 'lodash';
-import { PremuiStyleService } from 'dist/angular-components/public-api';
+import * as _ from 'lodash';
+import { PremuiStyleService } from '../../services';
 
 @Injectable({
   providedIn: 'root',
