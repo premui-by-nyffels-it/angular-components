@@ -1,0 +1,39 @@
+@import '../../../../styleVariables.scss';
+
+div.button-switch-grid {
+  display: grid;
+  grid-template-columns: var(--grid-columns);
+  column-gap: 20px;
+}
+
+div.button-switch {
+  border-radius: 5px;
+  border: solid var(--fontColor) 1px;
+
+  text-align: center;
+  font-family: var(--mainFont);
+  color: var(--fontColor);
+  font-size: 14px;
+
+  height: 40px;
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+
+div.button-switch p {
+  padding: 0;
+  margin: calc((40px - 14px) / 2) 0;
+}
+
+div.button-switch:hover {
+  cursor: pointer;
+}
+
+div.button-switch.selected {
+  border: solid var(--fontColor) 2px;
+  font-weight: bold;
+
+  height: 38px;
+}

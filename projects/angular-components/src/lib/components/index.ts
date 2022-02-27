@@ -12,3 +12,4 @@ export * from './title-bar/title-bar.component';
 export * from './side-menu/side-menu.component';
 export * from './input/input.component';
 export * from './text-area/text-area.component';
+export * from './switch/switch.component';
