@@ -18,6 +18,7 @@ import {
   PremuiTextArea,
   PremuiSwitchElement,
   PremuiSwitch,
+  PremuiDate,
 } from './components';
 
 @NgModule({
@@ -39,6 +40,7 @@ import {
     PremuiTextArea,
     PremuiSwitch,
     PremuiSwitchElement,
+    PremuiDate,
   ],
   imports: [CommonModule],
   exports: [
@@ -59,6 +61,7 @@ import {
     PremuiTextArea,
     PremuiSwitch,
     PremuiSwitchElement,
+    PremuiDate,
   ],
 })
 export class PremuiAngularComponentsModule {}

@@ -1,0 +1,12 @@
+<fieldset [disabled]="disabled">
+  <legend *ngIf="label">{{ label }}</legend>
+  <input
+    type="text"
+    [placeholder]="placeholder"
+    [value]="formattedDate"
+    [readonly]="readOnly"
+    [disabled]="disabled"
+    autocomplete="off"
+    (keyup)="onValueChange($any($event.target).value)"
+  />
+</fieldset>
