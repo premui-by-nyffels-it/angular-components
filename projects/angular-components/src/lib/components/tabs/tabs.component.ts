@@ -1,7 +1,7 @@
 import { Component, ElementRef, ChangeDetectorRef, AfterViewInit, OnChanges, SimpleChanges, ContentChildren, QueryList, Output, EventEmitter, Input, OnInit, OnDestroy, Host } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import _ from 'lodash';
+import * as _ from 'lodash';
 import { PremuiStyleService } from '../../services';
 
 @Component({
