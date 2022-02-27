@@ -1,0 +1,19 @@
+<div class="menu-container" [style.min-height]="'calc(100vh - ' + offset + ')'">
+  <div class="menu-indicator">{{ menuLabel }}</div>
+</div>
+<div class="menu" #menu [style.transition]="'width 1s ' + hoverDelay" [style.top]="offset" [style.height]="'calc(100% - ' + offset + ')'">
+  <div class="menu-content">
+    <ng-container *ngFor="let item of items">
+      <ng-container [ngTemplateOutlet]="menuItems" [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #menuItems let-item>
+  <premui-collapsible title="{{ item.label }}" (click)="onItemClick(item)" (onContext)="onContextClick($event, item)" *ngIf="item.children?.length > 0" [(open)]="item.open">
+    <ng-template ngFor [ngForOf]="item.children" [ngForTemplate]="menuItems"></ng-template>
+  </premui-collapsible>
+  <button #title class="item" (click)="onItemClick(item)" (onContext)="onContextClick($any($event), item)" *ngIf="item.children?.length <= 0">
+    {{ item.label }}
+  </button>
+</ng-template>

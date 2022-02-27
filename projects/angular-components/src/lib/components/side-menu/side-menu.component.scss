@@ -1,0 +1,74 @@
+@import '../../../../styleVariables.scss';
+
+.menu-container {
+  background-color: var(--primColor);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.menu-container:hover {
+  cursor: pointer;
+}
+
+.menu-indicator {
+  color: var(--fontColor);
+  font-style: var(--mainFont);
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+  left: -12px;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50vh;
+}
+
+.menu {
+  position: fixed;
+  display: block;
+  width: var(--menuWidth);
+  max-width: 100%;
+  left: 20px;
+  background-color: var(--primColor);
+  z-index: 10;
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.menu-container:hover + .menu {
+  --menuWidth: 500px;
+  --menuContent: visible;
+  left: 20px;
+}
+
+.menu:hover {
+  --menuWidth: 500px;
+  --menuContent: visible;
+  left: 20px;
+}
+
+.menu-content {
+  visibility: var(--menuContent);
+  transition: visibility 0.2s ease-in;
+}
+
+button.item {
+  background-color: transparent;
+  color: var(--fontColor);
+  cursor: pointer;
+  width: calc(100% - 10px);
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 14px;
+
+  margin: 0;
+  padding: 15px;
+}
+
+button.item:hover {
+  background-color: var(--accentColor);
+}
