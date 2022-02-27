@@ -1,0 +1,22 @@
+<fieldset [disabled]="disabled" [class.button]="button">
+  <legend [class.button]="button" *ngIf="label">{{ label }}</legend>
+  <input
+    [class.button]="button"
+    [type]="type"
+    [value]="value"
+    [readonly]="readOnly"
+    [disabled]="disabled"
+    [min]="min"
+    [max]="max"
+    [step]="step"
+    [placeholder]="placeholder"
+    [autocomplete]="autocomplete"
+    (keyup)="onValueChange($any($event.target).value)"
+    (click)="onClick($event)"
+    (focus)="onFocus()"
+    (focusout)="onFocusLost()"
+  />
+  <span class="icon-container" [class.disabled]="this.disableIcon" [class.enabled]="!this.disableIcon" (click)="onIconClick($event)" *ngIf="icon">
+    <premui-icon [disabled]="disableIcon" [icon]="icon"></premui-icon>
+  </span>
+</fieldset>

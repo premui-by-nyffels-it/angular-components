@@ -1,0 +1,13 @@
+<fieldset [disabled]="disabled">
+  <legend *ngIf="label">{{ label }}</legend>
+  <textarea
+    [value]="value"
+    [readonly]="readOnly"
+    [disabled]="disabled"
+    [placeholder]="placeholder"
+    [rows]="amountOfLines"
+    (keyup)="onValueChange($any($event.target).value)"
+    (focus)="onFocus()"
+    (focusout)="onFocusLost()"
+  ></textarea>
+</fieldset>

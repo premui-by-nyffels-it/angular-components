@@ -10,3 +10,5 @@ export * from './expand-button/expand-button.component';
 export * from './expand-toggle/expand-toggle.component';
 export * from './title-bar/title-bar.component';
 export * from './side-menu/side-menu.component';
+export * from './input/input.component';
+export * from './text-area/text-area.component';
