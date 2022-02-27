@@ -12,11 +12,38 @@ import {
   PremuiTabItem,
   PremuiTabs,
   PremuiExpandToggle,
+  PremuiTitleBar,
 } from './components';
 
 @NgModule({
-  declarations: [PremuiIcon, PremuiButton, PremuiCard, PremuiLoading, PremuiSpacer, PremuiToggleButton, PremuiCollapsible, PremuiTabs, PremuiTabItem, PremuiExpandButton, PremuiExpandToggle],
+  declarations: [
+    PremuiIcon,
+    PremuiButton,
+    PremuiCard,
+    PremuiLoading,
+    PremuiSpacer,
+    PremuiToggleButton,
+    PremuiCollapsible,
+    PremuiTabs,
+    PremuiTabItem,
+    PremuiExpandButton,
+    PremuiExpandToggle,
+    PremuiTitleBar,
+  ],
   imports: [CommonModule],
-  exports: [PremuiIcon, PremuiButton, PremuiCard, PremuiLoading, PremuiSpacer, PremuiToggleButton, PremuiCollapsible, PremuiTabs, PremuiTabItem, PremuiExpandButton, PremuiExpandToggle],
+  exports: [
+    PremuiIcon,
+    PremuiButton,
+    PremuiCard,
+    PremuiLoading,
+    PremuiSpacer,
+    PremuiToggleButton,
+    PremuiCollapsible,
+    PremuiTabs,
+    PremuiTabItem,
+    PremuiExpandButton,
+    PremuiExpandToggle,
+    PremuiTitleBar,
+  ],
 })
 export class PremuiAngularComponentsModule {}

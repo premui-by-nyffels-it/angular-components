@@ -8,3 +8,4 @@ export * from './collapsible/collapsible.component';
 export * from './tabs/tabs.component';
 export * from './expand-button/expand-button.component';
 export * from './expand-toggle/expand-toggle.component';
+export * from './title-bar/title-bar.component';

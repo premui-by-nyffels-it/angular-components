@@ -1,0 +1,24 @@
+<div class="title-bar">
+  <div class="title-bar-container">
+    <div class="title-bar-title" (click)="goToHome()">
+      <p class="appname">{{ title }}</p>
+    </div>
+    <div class="title-bar-information">
+      <p class="breadcrumbs">
+        <span
+          class="breadcrumb"
+          [class.selectable]="crumb.route || crumb.options"
+          *ngFor="let crumb of breadcrumbs; let i = index"
+          (click)="openRoute(crumb)"
+          (contextmenu)="openBreadCrumbMenu($event, crumb)"
+          >{{ crumb.label }}</span
+        >
+      </p>
+    </div>
+  </div>
+</div>
+
+<ul id="menu" #breadcrumbsContextMenu>
+  <li class="menu-item" *ngFor="let option of menuCrumbOptions" (click)="openRoute(option)">{{ option.label }}</li>
+</ul>
+<div id="out-click" #outClick (click)="clickOnOutClick()"></div>
