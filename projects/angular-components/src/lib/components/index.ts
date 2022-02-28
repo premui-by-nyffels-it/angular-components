@@ -14,3 +14,5 @@ export * from './input/input.component';
 export * from './text-area/text-area.component';
 export * from './switch/switch.component';
 export * from './date/date.component';
+export * from './simple-table/simple-table.component';
+export * from './smart-table/smart-table.component';

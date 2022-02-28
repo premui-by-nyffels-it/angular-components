@@ -1,0 +1,190 @@
+@import '../../../../styleVariables.scss';
+
+div.table-container {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mainFont);
+  table-layout:fixed;
+  word-break: break-word;
+}
+
+tr {
+  background-color: var(--primColor);
+}
+
+tr:nth-child(2n + 1) {
+  background: var(--accentColor);
+}
+
+tr.row:hover {
+  background-color: var(--hoverColor);
+  cursor: pointer;
+}
+
+th {
+  cursor: pointer;
+  background-color: var(--primColor);
+  text-align: left;
+  font-size: 12px;
+  color: var(--fontColor);
+  font-family: var(--mainFont);
+  font-weight: normal;
+  padding: 15px 10px;
+  border-bottom: solid 1px var(--disabledColor);
+}
+
+th.checkBoxColumn {
+  width: 20px !important;
+}
+
+td {
+  text-align: left;
+  font-size: 14px;
+  color: var(--fontColor);
+  font-family: var(--mainFont);
+  font-weight: normal;
+  padding: 15px 10px;
+}
+
+div.table-paginator {
+  width: 100%;
+  overflow-x: hidden;
+
+  font-family: var(--mainFont);
+  background-color: var(--primColor);
+  margin: 20px 0;
+
+  display: grid;
+  grid-template-columns: 360px auto;
+}
+
+div.paginator-indicator {
+  text-align: right;
+}
+
+p.indicator-element {
+  color: var(--fontColor);
+  font-family: var(--mainFont);
+  font-size: 16px;
+  margin: 14px 10px 10px 10px;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+div.pages {
+  float: left;
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+}
+
+div.page-element {
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+div.page-element.disabled-paginator {
+  cursor: not-allowed;
+  color: var(--disabledFontColor);
+}
+
+div.page-element.disabled-paginator p {
+  cursor: not-allowed;
+  color: var(--disabledFontColor);
+}
+
+div.page-element:hover p {
+  color: var(--hoverColor);
+}
+
+div.page-element p {
+  color: var(--fontColor);
+  font-family: var(--mainFont);
+  font-size: 16px;
+  margin: 14px 10px 10px 10px;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+p.prevnext {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  margin: 12px 10px 8px 10px !important;
+}
+
+div.page-element:first-child {
+  border-left: none;
+}
+
+div.page-element:last-child {
+  border-right: none;
+}
+
+input {
+  /* Font */
+  font-family: var(--mainfont);
+  color: var(--fontColor);
+
+  /* Input */
+  background-color: transparent;
+  padding: 0;
+  width: calc(100% - 4px);
+  margin: 0 2px;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+th.clear-header {
+  width: 20px !important;
+}
+
+input::placeholder {
+  color: var(--disabledFontColor);
+}
+
+div.table-variables {
+	width: 100%;
+
+	font-family: var(--mainFont);
+  background-color: var(--primColor);
+  margin: 20px 0;
+}
+
+premui-toggle:first-of-type {
+	margin-left: 15px;
+}
+
+premui-toggle:not(:first-of-type) {
+	margin-left: 10px;
+}
+
+premui-toggle:last-of-type {
+	margin-right: 15px;
+}
+
+.rowText.invalid {
+	color: var(--invalidColor) !important;
+}
+
+.rowText.valid {
+	color: var(--validColor) !important;
+}
+
+.rowText.warning {
+	color: var(--warningColor) !important;
+}

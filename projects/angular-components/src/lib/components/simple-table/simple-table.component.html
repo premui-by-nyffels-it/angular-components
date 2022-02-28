@@ -1,0 +1,62 @@
+<div class="table-container">
+  <table>
+    <!-- Headers -->
+    <tr>
+      <th *ngIf="selection" class="checkBoxColumn"><input type="checkbox" class="checkAll" (click)="selectAll()" /></th>
+      <ng-container *ngFor="let column of columns">
+        <th (click)="sort(column)" [style.width]="column.width ? column.width : 'auto'">
+          {{ column.name }}
+          <premui-icon [icon]="icon.UP" [settings]="tableIconSettings" *ngIf="parameters.order.keys == column.keys && parameters.order.direction == 'ASC'"></premui-icon>
+          <premui-icon [icon]="icon.DOWN" [settings]="tableIconSettings" *ngIf="parameters.order.keys == column.keys && parameters.order.direction == 'DESC'"></premui-icon>
+        </th>
+      </ng-container>
+      <th class="clear-header" *ngIf="clear" (click)="onClear()"><premui-icon [icon]="icon.CLOSE" [settings]="tableIconSettings"></premui-icon></th>
+    </tr>
+    <!-- Search -->
+    <tr *ngIf="search">
+      <td *ngIf="selection" class="checkBoxColumn"></td>
+      <td *ngFor="let column of columns">
+        <input
+          *ngIf="column.keys != null && column.keys.length > 0 && !column.disableSearch"
+          placeholder="{{ searchLabel }}"
+          [autocomplete]="true"
+          (keyup)="onSearch(column, $any($event.target).value)"
+        />
+      </td>
+      <td class="clear-header" *ngIf="clear"></td>
+    </tr>
+    <!-- Values -->
+    <tr class="row" *ngFor="let item of paginatedData">
+      <td *ngIf="selection" class="checkBoxColumn"><input type="checkbox" class="rowSelect" (click)="selectRow(item)" /></td>
+      <td
+        class="rowText"
+        [class.warning]="column.color && column.color(column, item) == 'warning'"
+        [class.valid]="column.color && column.color(column, item) == 'valid'"
+        [class.invalid]="column.color && column.color(column, item) == 'invalid'"
+        *ngFor="let column of columns"
+        (click)="onClick(item)"
+      >
+        {{ getValue(item, column) }}
+      </td>
+      <td class="clear-header" *ngIf="clear"></td>
+    </tr>
+  </table>
+</div>
+<!-- Paginator -->
+<div class="table-paginator" *ngIf="paginator && paginatedData && paginatedData.length > 0">
+  <div class="pages">
+    <div class="page-element" [class.disabled-paginator]="parameters.paginator.page && parameters.paginator.page <= 1" (click)="previousPage()">
+      <p class="prevnext">&lt;</p>
+    </div>
+    <div class="page-element" *ngFor="let page of amountOfPages" [class.disabled-paginator]="parameters.paginator.page && parameters.paginator.page == 1" (click)="setPage(page)">
+      <p>{{ page == 0 ? '...' : page }}</p>
+    </div>
+    <div class="page-element" [class.disabled-paginator]="parameters.paginator.page && parameters.paginator.page >= _amountOfPages" (click)="nextPage()">
+      <p class="prevnext">&gt;</p>
+    </div>
+  </div>
+
+  <div class="paginator-indicator">
+    <p class="indicator-element">{{ currentMinItem }} - {{ currentMaxItem }} / {{ totalItems }}</p>
+  </div>
+</div>

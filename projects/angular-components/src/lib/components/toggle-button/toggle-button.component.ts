@@ -7,8 +7,8 @@ import { PremuiStyleService } from '../../services';
   styleUrls: ['./toggle-button.component.scss'],
 })
 export class PremuiToggleButton {
-  @Input() checkedLabel = '';
-  @Input() uncheckedLabel = '';
+  @Input() checkedLabel: string | undefined = '';
+  @Input() uncheckedLabel: string | undefined = '';
 
   private _size: ButtonSize = 'small';
   // @Input() public set size(size: ButtonSize) {
