@@ -4,5 +4,6 @@
   "allowedNonPeerDependencies": ["@types/lodash", "lodash", "rxjs", "tslib", "moment", "moment-timezone"],
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+	"assets": ["styleVariables.scss"]
 }
