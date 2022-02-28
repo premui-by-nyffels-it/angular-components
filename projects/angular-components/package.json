@@ -1,6 +1,29 @@
 {
   "name": "@premui/angular-components",
   "version": "0.1.0",
+	"description": "This project is part of the PremUI Angular library and contains all the Angular sevices and components needed for the component and premui style of Angular.",
+	"author": {
+    "name": "Nyffels IT",
+    "email": "chesney@nyffels-it.be",
+    "url": "https://nyffels-it.be"
+  },
+	"bugs": {
+    "url": "https://gitlab.com/nyffels-it/premui-by-nyffels-it/angular-convertion/-/issues"
+  },
+	"license": "UNLICENSED",
+	"contributors": [
+    {
+      "email": "chesney@nyffels.be",
+      "name": "Chesney Nyffels",
+      "url": "https://nyffels.be"
+    }
+  ],
+	"repository": {
+    "url": "https://gitlab.com/nyffels-it/premui-by-nyffels-it/angular-convertion",
+    "type": "GIT"
+  },
+	"private": false,
+  "homepage": "https://premui.be",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
