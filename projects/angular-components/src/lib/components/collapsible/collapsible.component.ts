@@ -49,9 +49,9 @@ export class PremuiCollapsible implements AfterViewInit {
 
   setContent(): void {
     if (this._open) {
-      this.contentComponent.nativeElement.style.maxHeight = this.contentComponent.nativeElement.scrollHeight + 'px';
+      if (this.contentComponent) this.contentComponent.nativeElement.style.maxHeight = this.contentComponent.nativeElement.scrollHeight + 'px';
     } else {
-      this.contentComponent.nativeElement.style.maxHeight = null;
+      if (this.contentComponent) this.contentComponent.nativeElement.style.maxHeight = null;
     }
   }
 
