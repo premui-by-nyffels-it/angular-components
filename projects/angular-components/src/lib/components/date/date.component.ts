@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ElementRef, OnInit } from '@angular/core';
-import * as moment from 'moment';
+import moment from 'moment-timezone';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { PremuiStyleService } from '../../services';
@@ -34,7 +34,7 @@ export class PremuiDate implements OnInit {
   private _date: Date | null = null;
   private _formattedDate: string | null = null;
   @Input('date') public set dateValue(date: Date | null) {
-    if (!date) {
+    if (!date || !moment(date).isValid()) {
       this._date = null;
       this._formattedDate = null;
     } else {
