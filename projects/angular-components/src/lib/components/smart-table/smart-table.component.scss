@@ -165,15 +165,15 @@ div.table-variables {
   margin: 20px 0;
 }
 
-premui-toggle:first-of-type {
+premui-toggle-button:first-of-type {
 	margin-left: 15px;
 }
 
-premui-toggle:not(:first-of-type) {
+premui-toggle-button:not(:first-of-type) {
 	margin-left: 10px;
 }
 
-premui-toggle:last-of-type {
+premui-toggle-button:last-of-type {
 	margin-right: 15px;
 }
 

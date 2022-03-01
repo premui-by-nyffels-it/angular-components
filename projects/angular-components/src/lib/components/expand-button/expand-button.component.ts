@@ -24,7 +24,7 @@ export class PremuiExpandButton implements OnInit {
     return this._disabled;
   }
 
-  private _expandedWidth: string = '40px';
+  private _expandedWidth: string = '500px';
   @Input('expandedWidth') public set expandedWidth(width: string) {
     this._expandedWidth = width;
   }

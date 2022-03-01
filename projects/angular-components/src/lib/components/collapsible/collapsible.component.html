@@ -1,5 +1,5 @@
 <div class="collapsible-container">
-  <button #title class="collapsible" (click)="onTitleClick()" (contextmenu)="onContextClick($event)">
+  <button class="collapsible" (click)="onTitleClick()" (contextmenu)="onContextClick($event)">
     {{ title }}
     <svg *ngIf="!open" class="title" viewBox="0 0 448 448">
       <path

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ElementRef, ChangeDetectorRef, ViewChild, Input, OnChanges, SimpleChanges, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef, ViewChild, Input, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import { PremuiStyleService } from '../../services';
 
 @Component({
@@ -7,7 +7,6 @@ import { PremuiStyleService } from '../../services';
   styleUrls: ['./collapsible.component.scss'],
 })
 export class PremuiCollapsible implements AfterViewInit {
-  @ViewChild('title') titleComponent!: ElementRef;
   @ViewChild('content') contentComponent!: ElementRef;
 
   private _title: string = '';

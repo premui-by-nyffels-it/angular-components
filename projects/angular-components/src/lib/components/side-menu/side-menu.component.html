@@ -10,7 +10,7 @@
 </div>
 
 <ng-template #menuItems let-item>
-  <premui-collapsible title="{{ item.label }}" (click)="onItemClick(item)" (onContext)="onContextClick($event, item)" *ngIf="item.children?.length > 0" [(open)]="item.open">
+  <premui-collapsible [title]="item.label" (click)="onItemClick(item)" (onContext)="onContextClick($event, item)" *ngIf="item.children?.length > 0" [(open)]="item.open">
     <ng-template ngFor [ngForOf]="item.children" [ngForTemplate]="menuItems"></ng-template>
   </premui-collapsible>
   <button #title class="item" (click)="onItemClick(item)" (onContext)="onContextClick($any($event), item)" *ngIf="item.children?.length <= 0">

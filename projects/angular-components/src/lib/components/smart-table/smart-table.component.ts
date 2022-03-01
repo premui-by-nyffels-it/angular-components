@@ -37,7 +37,7 @@ export class PremuiSmartTable extends PremuiSimpleTable {
     return this._columns;
   }
 
-	protected override onSearchChange: Subject<{ column: SmartTableColumn; value: string }> = new Subject();
+  protected override onSearchChange: Subject<{ column: SmartTableColumn; value: string }> = new Subject();
 
   constructor(protected override ref: ElementRef, protected override styleService: PremuiStyleService) {
     super(ref, styleService);

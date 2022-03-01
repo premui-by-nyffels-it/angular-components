@@ -1,6 +1,29 @@
 # Angular Components
 All the changes for the Premui Angular Components module.
 
+[0.1.6] - 2022-03-01
+
+# Fixed
+- Wrong color on background of toggle button.
+- Green color on background of toggle button when checked.
+- Incorrect default expand width on expand button.
+- Fixed no margin on table variables.
+
+[0.1.5] - 2022-03-01
+
+# Fixed
+- title label issue on collapsable. 
+
+[0.1.4] - 2022-03-01
+
+# Fixed
+- Side menu label problems. 
+
+[0.1.3] - 2022-03-01
+
+# Fixed
+- Undefined error on collapsable. 
+
 [0.1.2] - 2022-02-28
 
 # Fixed
