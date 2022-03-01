@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
 import * as _ from 'lodash';
 import { cloneDeep, sortBy } from 'lodash';
 import { fromEvent } from 'rxjs';
@@ -140,7 +140,7 @@ export class PremuiSimpleTable implements OnInit, OnChanges, OnDestroy {
     height: '8px',
   };
 
-  constructor(protected ref: ElementRef, protected styleService: PremuiStyleService) {
+  constructor(protected ref: ElementRef, protected styleService: PremuiStyleService, protected cdr: ChangeDetectorRef) {
     this.styleService.applyStyle(this.ref);
   }
 
@@ -287,6 +287,8 @@ export class PremuiSimpleTable implements OnInit, OnChanges, OnDestroy {
       this._currentMinItem = 1;
       this._currentMaxItem = this.paginatedData.length;
     }
+
+		this.cdr.detectChanges();
   }
 
   getValue(item: any, column: TableColumn): string {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, Input, Output, EventEmitter, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import * as _ from 'lodash';
 import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
@@ -11,13 +11,7 @@ import { PremuiStyleService } from '../../services';
   styleUrls: ['./smart-table.component.scss'],
 })
 export class PremuiSmartTable extends PremuiSimpleTable {
-  protected _dataFunction: any;
-  @Input('function') public set dataFunction(datafunction: any) {
-    this._dataFunction = this.dataFunction;
-  }
-  public get dataFunction(): any {
-    return this._dataFunction;
-  }
+  @Input() dataFunction: any;
 
   protected _variables: QueryVariable[] = [];
   @Input('variables') public set variables(variables: QueryVariable[]) {
@@ -39,8 +33,8 @@ export class PremuiSmartTable extends PremuiSimpleTable {
 
   protected override onSearchChange: Subject<{ column: SmartTableColumn; value: string }> = new Subject();
 
-  constructor(protected override ref: ElementRef, protected override styleService: PremuiStyleService) {
-    super(ref, styleService);
+  constructor(protected override ref: ElementRef, protected override styleService: PremuiStyleService, protected override cdr: ChangeDetectorRef) {
+    super(ref, styleService, cdr);
   }
 
   override ngOnChanges(changes: SimpleChanges): void {
@@ -138,6 +132,7 @@ export class PremuiSmartTable extends PremuiSimpleTable {
     this.selectedItems = [];
 
     if (!this.dataFunction) {
+			console.info("No function linked to smart-table!");
       this.data = [];
       return;
     }
@@ -154,6 +149,7 @@ export class PremuiSmartTable extends PremuiSimpleTable {
 
         /* Set data, check for changes */
         this.data = object.data;
+				this.cdr.detectChanges();
       });
   }
 

@@ -27,7 +27,7 @@ input {
   /* Input */
   background-color: transparent;
   padding: 0;
-  width: calc(100% - 4px - 18px);
+  width: calc(100% - 25px);
   margin: 0 2px;
   border: none;
 }
@@ -65,15 +65,4 @@ span.icon-container.enabled {
 
 span.icon-container.disabled {
   cursor: not-allowed;
-}
-
-premui-icon::ng-deep {
-  svg.icon {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 18px !important;
-    height: auto !important;
-    float: right !important;
-    position: relative !important;
-  }
 }

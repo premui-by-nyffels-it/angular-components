@@ -156,15 +156,15 @@ $sw-lg-min-width: 60px;
     }
 
     .switch-label {
-      color: black;
-
       &-checked {
         // opacity: 0;
+        color: var(--fontColor) !important;
         display: none;
       }
 
       &-unchecked {
         // opacity: 1;
+        color: var(--fontColor) !important;
         display: block;
       }
     }

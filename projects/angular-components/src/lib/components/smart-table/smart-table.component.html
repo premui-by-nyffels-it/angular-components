@@ -66,7 +66,7 @@
     <div class="page-element" [class.disabled-paginator]="parameters.paginator.page && parameters.paginator.page <= 1" (click)="previousPage()">
       <p class="prevnext">&lt;</p>
     </div>
-    <div class="page-element" *ngFor="let page of amountOfPages" [class.disabled-paginator]="parameters.paginator.page && parameters.paginator.page == 1" (click)="setPage(page)">
+    <div class="page-element" *ngFor="let page of amountOfPages" [class.disabled-paginator]="parameters.paginator.page && parameters.paginator.page == page" (click)="setPage(page)">
       <p>{{ page == 0 ? '...' : page }}</p>
     </div>
     <div class="page-element" [class.disabled-paginator]="parameters.paginator.page && parameters.paginator.page >= _amountOfPages" (click)="nextPage()">

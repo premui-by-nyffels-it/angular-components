@@ -17,6 +17,6 @@
     (focusout)="onFocusLost()"
   />
   <span class="icon-container" [class.disabled]="this.disableIcon" [class.enabled]="!this.disableIcon" (click)="onIconClick($event)" *ngIf="icon">
-    <premui-icon [disabled]="disableIcon" [icon]="icon"></premui-icon>
+    <premui-icon [settings]="iconSettings" [disabled]="disableIcon" [icon]="icon"></premui-icon>
   </span>
 </fieldset>

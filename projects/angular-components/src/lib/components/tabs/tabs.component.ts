@@ -40,7 +40,7 @@ export class PremuiTabItem implements OnChanges, OnInit, OnDestroy, AfterViewIni
 
   onDestroy: Subject<void> = new Subject();
 
-  constructor(@Host() parent: PremuiTabs, private ref: ElementRef, private styleService: PremuiStyleService) {
+  constructor(@Host() parent: PremuiTabs, private ref: ElementRef, private styleService: PremuiStyleService, private cdr: ChangeDetectorRef) {
     this.styleService.applyStyle(this.ref);
     this.parent = parent;
   }
@@ -54,6 +54,7 @@ export class PremuiTabItem implements OnChanges, OnInit, OnDestroy, AfterViewIni
 
     this.selected.pipe(takeUntil(this.onDestroy)).subscribe((selected) => {
       this._selected = selected;
+			this.cdr.detectChanges();
     });
   }
 
@@ -132,7 +133,7 @@ export class PremuiTabs implements OnChanges, AfterViewInit {
 
   initCompleted: boolean = false;
 
-  constructor(private ref: ElementRef, private styleService: PremuiStyleService) {
+  constructor(private ref: ElementRef, private styleService: PremuiStyleService, private cdr: ChangeDetectorRef) {
     this.styleService.applyStyle(this.ref);
   }
 
@@ -164,6 +165,8 @@ export class PremuiTabs implements OnChanges, AfterViewInit {
       for (let i = 0; i < itemCount; i++) gridTemplateColumns.push(`${100 / itemCount}%`);
     }
     this._templateColumns = gridTemplateColumns.join(' ');
+
+		this.cdr.detectChanges();
   }
 
   onTabClick(id: string): void {

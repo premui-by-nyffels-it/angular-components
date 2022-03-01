@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, ElementRef, OnInit } from '@ang
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { PremuiStyleService } from '../../services';
-import { Icon, PossibleIcons } from '../icon/icon.component';
+import { DefaultIconSettings, Icon, PossibleIcons } from '../icon/icon.component';
 
 @Component({
   selector: 'premui-input',
@@ -10,6 +10,10 @@ import { Icon, PossibleIcons } from '../icon/icon.component';
   styleUrls: ['./input.component.scss'],
 })
 export class PremuiInput implements OnInit {
+	get iconSettings() {
+		return DefaultIconSettings.input();
+	}
+
   private _label!: string;
   @Input('label') public set label(label: string) {
     this._label = label;

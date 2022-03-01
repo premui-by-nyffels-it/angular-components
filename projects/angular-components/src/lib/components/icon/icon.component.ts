@@ -112,7 +112,10 @@ export const PossibleIcons: string[] = Object.values(Icon);
 export interface IconSettings {
   margin?: string;
   padding?: string;
+  width?: string;
   height?: string;
+  float?: string;
+  position?: string;
   cursorOnHover?: string;
 }
 
@@ -122,6 +125,17 @@ export class DefaultIconSettings {
       margin: '0 auto',
       padding: '0',
       height: '20px',
+    };
+  }
+
+  public static input(): IconSettings {
+    return {
+      margin: '0',
+      padding: '0',
+      width: '18px',
+      height: 'auto',
+      float: 'right',
+      position: 'relative',
     };
   }
 }

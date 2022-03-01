@@ -1,6 +1,36 @@
 # Angular Components
 All the changes for the Premui Angular Components module.
 
+[0.1.11] - 2022-03-01
+
+# Fixed 
+- Incorrect indication on the paginator of the tables. 
+- Invisible content on tab. 
+- Icon on input. 
+
+[0.1.10] - 2022-03-01
+
+# Fixed
+- Data not showing on tables. 
+
+[0.1.9] - 2022-03-01
+
+# Fixed
+- Default width of expand-toggle and expand-button are changed to 300px instead of 500px.
+- Refresh view on loadData of tabs component. 
+- Fixed expanded toggle.
+- Fix for smart-table data not loading. 
+
+[0.1.8] - 2022-03-01
+
+# Fixed
+- Incorrect label color on toggle button. 
+
+[0.1.7] - 2022-03-01
+'
+# Fixed
+- Fixed width of expand-button. 
+
 [0.1.6] - 2022-03-01
 
 # Fixed
