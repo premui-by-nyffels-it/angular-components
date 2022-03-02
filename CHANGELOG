@@ -1,6 +1,11 @@
 # Angular Components
 All the changes for the Premui Angular Components module.
 
+[0.1.14] - 2022-03-02
+
+# Fixed
+- Reload issue with premui element.
+
 [0.1.13] - 2022-03-02
 
 # Fixed

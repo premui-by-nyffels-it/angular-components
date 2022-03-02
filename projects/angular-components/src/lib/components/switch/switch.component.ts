@@ -16,7 +16,7 @@ export class PremuiSwitch implements AfterViewInit, OnChanges {
     return this._elementsPerRow;
   }
 
-  constructor(private ref: ElementRef, private styleService: PremuiStyleService) {
+  constructor(private ref: ElementRef, private styleService: PremuiStyleService, private cdr: ChangeDetectorRef) {
     this.styleService.applyStyle(this.ref);
   }
 
@@ -50,6 +50,7 @@ export class PremuiSwitch implements AfterViewInit, OnChanges {
     }
 
     this._gridColumns = gridColumnsStr;
+		this.cdr.detectChanges();
   }
 }
 
