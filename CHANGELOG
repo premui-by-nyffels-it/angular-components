@@ -1,6 +1,11 @@
 # Angular Components
 All the changes for the Premui Angular Components module.
 
+[0.1.13] - 2022-03-02
+
+# Fixed
+- Incorrect selected data on bulk select of smart-table.
+
 [0.1.12] - 2022-03-01
 
 # Fixed

@@ -171,6 +171,23 @@ export class PremuiSmartTable extends PremuiSimpleTable {
     this.variablesChangedEmitter.emit(this.variables);
     this.refresh();
   }
+
+	override selectAll() {
+    /* Set checkboxes to checked/unchecked */
+    (this.ref.nativeElement as HTMLElement).querySelectorAll('.rowSelect').forEach((x) => ((x as HTMLInputElement).checked = this.selectAllItems));
+
+    /* Set selecteditems correct */
+    this.selectedItems = [];
+    if (this.selectAllItems) {
+      for (let item of this.data) this.selectedItems.push(item);
+      this.selectAllItems = false;
+    } else {
+      this.selectAllItems = true;
+    }
+
+    /* Emit the selectedItems */
+    this.selectionChangedEmitter.emit(this.selectedItems);
+  }
 }
 
 export interface SmartTableColumn extends TableColumn {
