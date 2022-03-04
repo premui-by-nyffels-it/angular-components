@@ -22,6 +22,7 @@ import {
   PremuiSimpleTable,
   PremuiSmartTable,
 } from './components';
+import { PremuiSelect } from './components/select/select.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {
     PremuiDate,
     PremuiSimpleTable,
     PremuiSmartTable,
+		PremuiSelect
   ],
   imports: [CommonModule],
   exports: [
@@ -68,6 +70,7 @@ import {
     PremuiDate,
     PremuiSimpleTable,
     PremuiSmartTable,
+		PremuiSelect
   ],
 })
 export class PremuiAngularComponentsModule {}

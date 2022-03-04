@@ -1,9 +1,9 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/angular-components",
-  "allowedNonPeerDependencies": ["@types/lodash", "lodash", "rxjs", "tslib", "moment", "moment-timezone"],
+  "allowedNonPeerDependencies": ["@types/lodash", "lodash", "rxjs", "tslib", "moment", "moment-timezone", "@types/string-similarity", "string-similarity"],
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-	"assets": ["styleVariables.scss"]
+  "assets": ["styleVariables.scss"]
 }

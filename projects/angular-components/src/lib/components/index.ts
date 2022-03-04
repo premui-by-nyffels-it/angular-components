@@ -16,3 +16,4 @@ export * from './switch/switch.component';
 export * from './date/date.component';
 export * from './simple-table/simple-table.component';
 export * from './smart-table/smart-table.component';
+export * from './select/select.component';
