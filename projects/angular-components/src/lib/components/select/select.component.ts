@@ -50,10 +50,10 @@ export class PremuiSelect implements OnInit, OnDestroy {
     return this._value;
   }
   @Output('valueChange') valueEmitter: EventEmitter<any> = new EventEmitter<any>();
-	@Input('selectedItem') public set selectedItem(item: any) {
-		this._value = item ? item[this._itemValueKey] : null;
+  @Input('selectedItem') public set selectedItem(item: any) {
+    this._value = item ? item[this._itemValueKey] : null;
     this._valueLabel = item ? item[this._itemLabelKey] : null;
-	}
+  }
   @Output('selectedItemChange') selectedItemEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   private _readOnly: boolean = false;
@@ -81,10 +81,10 @@ export class PremuiSelect implements OnInit, OnDestroy {
   }
 
   private _items: any[] = [];
-	private _originalItems: any[] = [];
+  private _originalItems: any[] = [];
   @Input('items') public set items(items: any[]) {
     this._items = items;
-		this._originalItems = items;
+    this._originalItems = items;
   }
   public get items(): any[] {
     return this._items;
@@ -114,8 +114,8 @@ export class PremuiSelect implements OnInit, OnDestroy {
     return this._enableSearch;
   }
 
-	private onSearchChange: Subject<string> = new Subject();
-	private onDestroy: Subject<void> = new Subject();
+  private onSearchChange: Subject<string> = new Subject();
+  private onDestroy: Subject<void> = new Subject();
 
   constructor(private styleService: PremuiStyleService, private ref: ElementRef) {
     this.styleService.applyStyle(this.ref);
@@ -125,7 +125,7 @@ export class PremuiSelect implements OnInit, OnDestroy {
     if (!this.label) throw new Error('No label detected for premui select. A label is required!');
   }
 
-	ngOnDestroy(): void {
+  ngOnDestroy(): void {
     this.onDestroy.next();
     this.onDestroy.complete();
   }
@@ -139,9 +139,9 @@ export class PremuiSelect implements OnInit, OnDestroy {
   }
 
   onButtonClick() {
-		if (!this.enableSearch) {
-			this.onIconClick();
-		}
+    if (!this.enableSearch) {
+      this.onIconClick();
+    }
   }
 
   onFocusLost() {
@@ -163,14 +163,17 @@ export class PremuiSelect implements OnInit, OnDestroy {
     this._value = item[this._itemValueKey];
     this._valueLabel = item[this._itemLabelKey];
     this.selectedItemEmitter.emit(item);
-		this.valueEmitter.emit(this._value);
+    this.valueEmitter.emit(this._value);
   }
 
-	onSearchChanged(searchEntry: string): void {
-		if (!searchEntry || searchEntry.trim().length < 3) {
-			this._items = this._originalItems;
-		} else {
-			this._items = _.orderBy(this._originalItems.filter(item => compareTwoStrings(item[this._itemLabelKey], searchEntry) > 0.5), (itm) => compareTwoStrings(itm[this._itemLabelKey], searchEntry)).reverse();
-		}
-	}
+  onSearchChanged(searchEntry: string): void {
+    if (!searchEntry || searchEntry.trim().length <= 0) {
+      this._items = this._originalItems;
+    } else {
+      this._items = _.orderBy(
+        this._originalItems.filter((item) => compareTwoStrings(item[this._itemLabelKey]?.toLowerCase(), searchEntry?.toLowerCase()) > 0.5),
+        (itm) => compareTwoStrings(itm[this._itemLabelKey]?.toLowerCase(), searchEntry?.toLowerCase())
+      ).reverse();
+    }
+  }
 }
