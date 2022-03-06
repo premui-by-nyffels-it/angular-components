@@ -117,6 +117,16 @@ export class PremuiSelect implements OnInit, OnDestroy {
   private onSearchChange: Subject<string> = new Subject();
   private onDestroy: Subject<void> = new Subject();
 
+	private _searchIndex: number = 0.5;
+	@Input('searchIndex') public set searchIndex(index: number) {
+		if (index < 0) throw new Error('Search index cannot be lower than 0! 0 equals always.');
+		if (index > 1) throw new Error('Search index cannot be highter tha 1! 1 means exact match.');
+		this._searchIndex = index;
+	}
+	public get searchIndex(): number {
+		return this._searchIndex;
+	}
+
   constructor(private styleService: PremuiStyleService, private ref: ElementRef) {
     this.styleService.applyStyle(this.ref);
   }
@@ -171,7 +181,7 @@ export class PremuiSelect implements OnInit, OnDestroy {
       this._items = this._originalItems;
     } else {
       this._items = _.orderBy(
-        this._originalItems.filter((item) => compareTwoStrings(item[this._itemLabelKey]?.toLowerCase(), searchEntry?.toLowerCase()) > 0.5),
+        this._originalItems.filter((item) => compareTwoStrings(item[this._itemLabelKey]?.toLowerCase(), searchEntry?.toLowerCase()) >= this.searchIndex),
         (itm) => compareTwoStrings(itm[this._itemLabelKey]?.toLowerCase(), searchEntry?.toLowerCase())
       ).reverse();
     }

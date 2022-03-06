@@ -1,6 +1,11 @@
 # Angular Components
 All the changes for the Premui Angular Components module.
 
+[0.3.0] - 2022-03-06
+
+# Added
+- SearchIndex on select. 
+
 [0.2.2] - 2022-03-06
 
 # Fixed 
