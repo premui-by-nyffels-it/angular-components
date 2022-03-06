@@ -141,7 +141,7 @@ export class PremuiSelect implements OnInit, OnDestroy {
   }
 
   onFocus() {
-    if (this.disabled === false) {
+    if (this._disabled === false && this._readOnly === false) {
       this._showItems = true;
       this._selectOverlayWidth = `${this.selectionInput.nativeElement.offsetWidth + 25}px`;
       this.focusEvent.emit();
@@ -155,13 +155,13 @@ export class PremuiSelect implements OnInit, OnDestroy {
   }
 
   onFocusLost() {
-    if (this.disabled === false) {
+    if (this._disabled === false && this._readOnly === false) {
       this.focusLostEvent.emit();
     }
   }
 
   onIconClick(): void {
-    if (this.disabled === false && this.readOnly === false) {
+    if (this.disabled === false && this._readOnly === false) {
       this._showItems = !this._showItems;
       this._selectOverlayWidth = `${this.selectionInput.nativeElement.offsetWidth + 25}px`;
     }
