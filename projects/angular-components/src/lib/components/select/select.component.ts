@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import _ from 'lodash';
 import { Subject } from 'rxjs';
 import { compareTwoStrings } from 'string-similarity';
 import { PremuiStyleService } from '../../services';
@@ -169,7 +170,7 @@ export class PremuiSelect implements OnInit, OnDestroy {
 		if (!searchEntry || searchEntry.trim().length < 3) {
 			this._items = this._originalItems;
 		} else {
-			this._items = this._originalItems.filter(item => compareTwoStrings(item[this._itemLabelKey], searchEntry));
+			this._items = _.orderBy(this._originalItems.filter(item => compareTwoStrings(item[this._itemLabelKey], searchEntry) > 0.5), (itm) => compareTwoStrings(itm[this._itemLabelKey], searchEntry)).reverse();
 		}
 	}
 }
