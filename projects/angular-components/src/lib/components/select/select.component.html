@@ -12,7 +12,7 @@
     (focus)="onFocus()"
     (focusout)="onFocusLost()"
   />
-  <span class="icon-container" [class.disabled]="disabled" [class.enabled]="!disabled" (click)="onIconClick()" *ngIf="icon">
+  <span class="icon-container" [class.disabled]="disabled" [class.enabled]="!disabled" (click)="onIconClick()" *ngIf="icon && !readOnly">
     <premui-icon [settings]="iconSettings" [disabled]="disabled" [icon]="showItems ? icon.CLOSE : icon.DOWN"></premui-icon>
   </span>
   <div class="item-container" *ngIf="showItems" [style.width]="_selectOverlayWidth" [style.max-height]="_maxSelectOverlayHeight">
