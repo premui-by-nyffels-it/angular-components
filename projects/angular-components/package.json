@@ -1,6 +1,6 @@
 {
   "name": "@premui/angular-components",
-  "version": "0.3.3",
+  "version": "0.4.0",
 	"description": "This project is part of the PremUI Angular library and contains all the Angular sevices and components needed for the component and premui style of Angular.",
 	"author": {
     "name": "Nyffels IT",
@@ -25,17 +25,24 @@
 	"private": false,
   "homepage": "https://premui.be",
   "peerDependencies": {
-    "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0"
+    "@angular/animations": "~13.3.1",
+    "@angular/common": "~13.3.1",
+    "@angular/compiler": "~13.3.1",
+    "@angular/core": "~13.3.1",
+    "@angular/forms": "~13.3.1",
+    "@angular/platform-browser": "~13.3.1",
+    "@angular/platform-browser-dynamic": "~13.3.1",
+    "@angular/router": "~13.3.1"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.179",
+    "@types/lodash": "^4.14.181",
 		"@types/string-similarity": "^4.0.0",
+		"@types/moment-timezone": "^0.5.30",
 		"string-similarity": "^4.0.4",
     "lodash": "^4.17.21",
-    "rxjs": "^7.5.4",
-    "tslib": "^2.3.0",
-		"moment": "^2.29.1",
+    "rxjs": "^7.5.5",
+    "tslib": "^2.3.1",
+		"moment": "^2.29.2",
     "moment-timezone": "^0.5.34"
   }
 }
