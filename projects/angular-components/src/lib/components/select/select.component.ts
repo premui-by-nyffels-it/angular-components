@@ -182,7 +182,7 @@ export class PremuiSelect implements OnInit, OnDestroy {
     } else {
       this._items = _.orderBy(
         this._originalItems.filter((item) => compareTwoStrings(item[this._itemLabelKey]?.toLowerCase(), searchEntry?.toLowerCase()) >= this.searchIndex),
-        (itm) => compareTwoStrings(itm[this._itemLabelKey]?.toLowerCase(), searchEntry?.toLowerCase())
+        (itm: any) => compareTwoStrings(itm[this._itemLabelKey]?.toLowerCase(), searchEntry?.toLowerCase())
       ).reverse();
     }
   }

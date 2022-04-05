@@ -1,6 +1,12 @@
 # Angular Components
 All the changes for the Premui Angular Components module.
 
+[0.3.3] - 2022-04-05
+
+# Fixed
+- Improved breacrumbs on title-bar
+- Overall bugfixes. 
+
 [0.3.2] - 2022-03-06
 
 # Fixed

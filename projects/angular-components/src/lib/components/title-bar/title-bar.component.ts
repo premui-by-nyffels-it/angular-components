@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges, Input, ElementRef, ViewChild, Injectable } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, SimpleChanges, Input, ElementRef, ViewChild, Injectable, ChangeDetectorRef } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { PremuiStyleService } from '../../services';
@@ -91,7 +91,7 @@ export class PremuiTitleBar implements OnInit, OnDestroy, OnChanges {
 
   menuCrumbOptions: Breadcrumb[] = [];
 
-  constructor(private ref: ElementRef, private styleService: PremuiStyleService, private router: Router) {}
+  constructor(private ref: ElementRef, private styleService: PremuiStyleService, private router: Router, private cdr: ChangeDetectorRef) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['instanceName'] && !changes['instanceName'].firstChange) {
@@ -110,11 +110,12 @@ export class PremuiTitleBar implements OnInit, OnDestroy, OnChanges {
     this.styleService.applyStyle(this.ref);
     this.titleBarService = PremuiTitleBarService.init(this.instanceName);
 
-    this.titleBarService.appname$.subscribe((appName) => {
+    this.titleBarService.appname$.subscribe((appName: string) => {
       this.title = appName;
     });
-    this.titleBarService.breadcrumbs$.subscribe((breadcrumbs) => {
+    this.titleBarService.breadcrumbs$.subscribe((breadcrumbs: Breadcrumb[]) => {
       this.breadcrumbs = breadcrumbs;
+			this.cdr.detectChanges();
     });
   }
 
