@@ -144,7 +144,7 @@ export class PremuiSideMenu implements OnInit, OnDestroy {
     this.menuService.enabled$.pipe(takeUntil(this.onDestroy)).subscribe((enabled) => {
       /* Enable logic */
       enabled ? this.ref.nativeElement.style.setProperty('--menuIndicatorWidth', '20px') : this.ref.nativeElement.style.setProperty('--menuIndicatorWidth', '0px');
-      enabled ? (this.menu.nativeElement.style.display = 'block') : (this.menu.nativeElement.style.display = 'none');
+      enabled && this.menu ? (this.menu.nativeElement.style.display = 'block') : (this.menu.nativeElement.style.display = 'none');
 
       this.menuService.reEvaluateMenu();
     });
