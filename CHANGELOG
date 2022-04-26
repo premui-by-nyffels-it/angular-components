@@ -1,6 +1,11 @@
 # Angular Components
 All the changes for the Premui Angular Components module.
 
+[0.4.1] - 2022-04-05
+
+# Fixed
+- Build issue.
+
 [0.4.0] - 2022-04-05
 
 # Changed

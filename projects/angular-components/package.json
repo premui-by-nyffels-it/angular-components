@@ -1,6 +1,6 @@
 {
   "name": "@premui/angular-components",
-  "version": "0.4.0",
+  "version": "0.4.1",
 	"description": "This project is part of the PremUI Angular library and contains all the Angular sevices and components needed for the component and premui style of Angular.",
 	"author": {
     "name": "Nyffels IT",
