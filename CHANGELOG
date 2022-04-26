@@ -4,7 +4,7 @@ All the changes for the Premui Angular Components module.
 [0.4.2] - 2022-04-26
 
 # Fixed
-- Nativeelement error on side menu when there is no menu. 
+- Native element error on side menu when there is no menu. 
 
 [0.4.1] - 2022-04-05
 
